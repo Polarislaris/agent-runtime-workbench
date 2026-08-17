@@ -1,0 +1,65 @@
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+*.egg-info/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local notes / design drafts
+JOB_AGENT_EXTENSION_DESIGN.md
+
+# Agent runtime state
+.agent/
+.agents/
+.worktrees/
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+*.db
+*.db-shm
+*.db-wal
+
+# Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Misc
+coverage/
+dist/
+build/
+*.log
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# Tutorial chapter directories
+s0[1-9]_*/
+s1[0-9]_*/
+s20_*/

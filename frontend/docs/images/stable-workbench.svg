@@ -1,0 +1,250 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Agent Runtime Workbench 稳定版三栏界面</title>
+  <desc id="desc">稳定版增加持久化运行记录、任务和 Agent tabs、worktree review 以及断线恢复状态。</desc>
+  <defs>
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#020617" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="topGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <style>
+      .font { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .label { font-size: 11px; font-weight: 700; letter-spacing: 1.25px; fill: #64748b; }
+      .small { font-size: 11px; fill: #94a3b8; }
+      .muted { font-size: 13px; fill: #94a3b8; }
+      .body { font-size: 13px; fill: #dbeafe; }
+      .title { font-size: 16px; font-weight: 700; fill: #f8fafc; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="900" fill="#060914"/>
+  <ellipse cx="720" cy="24" rx="470" ry="170" fill="#1e3a8a" opacity="0.16"/>
+  <ellipse cx="1380" cy="840" rx="280" ry="220" fill="#4c1d95" opacity="0.14"/>
+
+  <g class="font" filter="url(#shadow2)">
+    <rect x="42" y="30" width="1356" height="838" rx="20" fill="#0a0f1d" stroke="#263247"/>
+
+    <!-- Window and global status -->
+    <rect x="42" y="30" width="1356" height="54" rx="20" fill="#101827"/>
+    <path d="M42 66V50a20 20 0 0 1 20-20h1316a20 20 0 0 1 20 20v16z" fill="#101827"/>
+    <circle cx="70" cy="57" r="6" fill="#fb7185"/>
+    <circle cx="90" cy="57" r="6" fill="#fbbf24"/>
+    <circle cx="110" cy="57" r="6" fill="#34d399"/>
+    <text x="720" y="63" text-anchor="middle" class="muted">Agent Runtime Workbench · Stable Portfolio Edition</text>
+    <rect x="1234" y="43" width="136" height="28" rx="14" fill="#052e2b" stroke="#065f46"/>
+    <circle cx="1252" cy="57" r="4" fill="#34d399"/>
+    <text x="1264" y="61" font-size="11" fill="#6ee7b7">Live · recovered</text>
+
+    <!-- Three columns -->
+    <rect x="42" y="84" width="258" height="784" fill="#0c1322"/>
+    <rect x="300" y="84" width="710" height="784" fill="#090f1c"/>
+    <rect x="1010" y="84" width="388" height="784" fill="#0c1322"/>
+    <line x1="300" y1="84" x2="300" y2="868" stroke="#263247"/>
+    <line x1="1010" y1="84" x2="1010" y2="868" stroke="#263247"/>
+
+    <!-- Left navigation -->
+    <g transform="translate(66 108)">
+      <rect width="38" height="38" rx="11" fill="url(#topGlow)"/>
+      <path d="M11 25l8-14 8 14M14 21h10" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="50" y="16" class="title">Agent Studio</text>
+      <text x="50" y="35" class="small">demo-app · local</text>
+
+      <rect y="60" width="210" height="40" rx="10" fill="#2563eb"/>
+      <text x="105" y="85" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">＋ New run</text>
+
+      <rect y="116" width="210" height="34" rx="8" fill="#111827" stroke="#263247"/>
+      <circle cx="16" cy="133" r="5" fill="none" stroke="#64748b" stroke-width="2"/>
+      <line x1="20" y1="137" x2="24" y2="141" stroke="#64748b" stroke-width="2"/>
+      <text x="34" y="138" class="small">Search runs…</text>
+
+      <text y="180" class="label">RUN HISTORY</text>
+      <text x="210" y="180" text-anchor="end" class="small">All ▾</text>
+
+      <rect y="194" width="210" height="70" rx="11" fill="#172554" stroke="#3b82f6"/>
+      <circle cx="16" cy="218" r="4" fill="#34d399"/>
+      <text x="30" y="223" class="body">Fix login race condition</text>
+      <text x="30" y="243" class="small">Completed · 1m 42s</text>
+      <text x="190" y="243" text-anchor="end" class="small">now</text>
+
+      <rect y="272" width="210" height="70" rx="11" fill="#111827"/>
+      <circle cx="16" cy="296" r="4" fill="#34d399"/>
+      <text x="30" y="301" class="body">Add worktree review</text>
+      <text x="30" y="321" class="small">Completed · 3m 08s</text>
+      <text x="190" y="321" text-anchor="end" class="small">12m</text>
+
+      <rect y="350" width="210" height="70" rx="11" fill="#111827"/>
+      <circle cx="16" cy="374" r="4" fill="#f87171"/>
+      <text x="30" y="379" class="body">Run full regression</text>
+      <text x="30" y="399" class="small">Failed · 48s</text>
+      <text x="190" y="399" text-anchor="end" class="small">1h</text>
+
+      <rect y="428" width="210" height="70" rx="11" fill="#111827"/>
+      <circle cx="16" cy="452" r="4" fill="#64748b"/>
+      <text x="30" y="457" class="body">Explore mock MCP</text>
+      <text x="30" y="477" class="small">Cancelled · 22s</text>
+      <text x="190" y="477" text-anchor="end" class="small">2h</text>
+
+      <text y="548" class="label">WORKSPACE</text>
+      <rect y="564" width="210" height="52" rx="10" fill="#111827" stroke="#263247"/>
+      <text x="16" y="586" class="body">demo-app</text>
+      <text x="16" y="603" class="small">main · clean</text>
+      <circle cx="192" cy="590" r="5" fill="#34d399"/>
+
+      <rect y="680" width="210" height="48" rx="10" fill="#111827"/>
+      <circle cx="20" cy="704" r="10" fill="#1e293b"/>
+      <text x="40" y="701" class="body">Runtime healthy</text>
+      <text x="40" y="717" class="small">SQLite · SSE</text>
+    </g>
+
+    <!-- Center run header and metrics -->
+    <g transform="translate(330 105)">
+      <text class="title">Fix login race condition</text>
+      <text y="22" class="small">run_01J8K · replayable · 24 events</text>
+      <rect x="574" y="-1" width="98" height="28" rx="14" fill="#052e2b"/>
+      <circle cx="590" cy="13" r="4" fill="#34d399"/>
+      <text x="603" y="17" font-size="11" fill="#6ee7b7">Completed</text>
+
+      <rect y="48" width="154" height="56" rx="10" fill="#111827" stroke="#263247"/>
+      <text x="14" y="69" class="small">DURATION</text>
+      <text x="14" y="92" font-size="17" font-weight="700" fill="#f8fafc">01:42</text>
+      <rect x="164" y="48" width="154" height="56" rx="10" fill="#111827" stroke="#263247"/>
+      <text x="178" y="69" class="small">TOOL CALLS</text>
+      <text x="178" y="92" font-size="17" font-weight="700" fill="#f8fafc">12</text>
+      <rect x="328" y="48" width="154" height="56" rx="10" fill="#111827" stroke="#263247"/>
+      <text x="342" y="69" class="small">TASKS</text>
+      <text x="342" y="92" font-size="17" font-weight="700" fill="#f8fafc">3 / 3</text>
+      <rect x="492" y="48" width="180" height="56" rx="10" fill="#111827" stroke="#263247"/>
+      <text x="506" y="69" class="small">WORKTREE</text>
+      <text x="506" y="92" font-size="14" font-weight="700" fill="#c4b5fd">wt-login-fix</text>
+    </g>
+    <line x1="300" y1="226" x2="1010" y2="226" stroke="#263247"/>
+
+    <!-- Center conversation -->
+    <g transform="translate(330 250)">
+      <rect x="248" width="374" height="60" rx="14" fill="#1d4ed8"/>
+      <text x="270" y="24" font-size="11" font-weight="700" fill="#bfdbfe">YOU</text>
+      <text x="270" y="44" font-size="13" fill="#fff">修复登录并发测试，并让 teammate 复核。</text>
+
+      <circle cx="17" cy="98" r="17" fill="#7c3aed"/>
+      <text x="17" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">AI</text>
+      <text x="46" y="94" class="title">Agent</text>
+      <text x="46" y="117" class="body">已定位共享 session 状态导致的竞态，开始隔离修改。</text>
+
+      <!-- Plan card -->
+      <rect x="46" y="140" width="576" height="108" rx="12" fill="#111827" stroke="#334155"/>
+      <text x="64" y="165" font-size="12" font-weight="700" fill="#c4b5fd">PLAN · 3/3 COMPLETED</text>
+      <circle cx="69" cy="190" r="7" fill="#059669"/>
+      <path d="M65 190l3 3 5-7" fill="none" stroke="#fff" stroke-width="1.6"/>
+      <text x="86" y="195" class="body">定位共享状态</text>
+      <circle cx="241" cy="190" r="7" fill="#059669"/>
+      <path d="M237 190l3 3 5-7" fill="none" stroke="#fff" stroke-width="1.6"/>
+      <text x="258" y="195" class="body">隔离实现并测试</text>
+      <circle cx="424" cy="190" r="7" fill="#059669"/>
+      <path d="M420 190l3 3 5-7" fill="none" stroke="#fff" stroke-width="1.6"/>
+      <text x="441" y="195" class="body">teammate 复核</text>
+      <rect x="64" y="219" width="536" height="4" rx="2" fill="#064e3b"/>
+      <rect x="64" y="219" width="536" height="4" rx="2" fill="#10b981"/>
+
+      <!-- Agent card -->
+      <rect x="46" y="262" width="576" height="92" rx="12" fill="#111827" stroke="#334155"/>
+      <circle cx="70" cy="288" r="11" fill="#2563eb"/>
+      <text x="70" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">BE</text>
+      <text x="91" y="292" class="body">backend-reviewer</text>
+      <rect x="482" y="276" width="118" height="24" rx="12" fill="#052e2b"/>
+      <text x="541" y="292" text-anchor="middle" font-size="11" fill="#6ee7b7">Completed · 31s</text>
+      <text x="70" y="321" class="small">Reviewed 3 files · no blocking findings</text>
+      <text x="70" y="340" class="small">Worktree: wt-login-fix</text>
+
+      <!-- Worktree review card -->
+      <rect x="46" y="368" width="576" height="148" rx="12" fill="#151229" stroke="#6d28d9"/>
+      <rect x="64" y="386" width="30" height="30" rx="8" fill="#6d28d9"/>
+      <path d="M72 401h14M79 394v14" stroke="#fff" stroke-width="1.8"/>
+      <text x="106" y="403" font-size="14" font-weight="700" fill="#ddd6fe">Worktree review ready</text>
+      <text x="64" y="438" class="small">3 files changed · +42 / -17 · checks passed</text>
+      <rect x="64" y="454" width="536" height="32" rx="7" fill="#0f172a"/>
+      <text x="76" y="475" class="small">auth/session.py   tests/test_login.py   config.py</text>
+      <rect x="383" y="493" width="104" height="28" rx="8" fill="#1f2937" stroke="#475569"/>
+      <text x="435" y="512" text-anchor="middle" font-size="11" fill="#cbd5e1">View checks</text>
+      <rect x="496" y="493" width="104" height="28" rx="8" fill="#6d28d9"/>
+      <text x="548" y="512" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Open diff</text>
+
+      <!-- Final response -->
+      <text x="46" y="558" class="body">修复完成：session 状态已改为请求级隔离，相关测试全部通过。</text>
+      <rect x="46" y="578" width="576" height="50" rx="10" fill="#052e2b" stroke="#065f46"/>
+      <circle cx="68" cy="603" r="8" fill="#10b981"/>
+      <path d="M64 603l3 3 6-8" fill="none" stroke="#fff" stroke-width="1.8"/>
+      <text x="86" y="599" class="body">Run completed successfully</text>
+      <text x="86" y="617" class="small">12 tools · 3 tasks · 8 tests passed</text>
+    </g>
+
+    <!-- Read-only replay composer -->
+    <rect x="324" y="812" width="662" height="38" rx="10" fill="#111827" stroke="#263247"/>
+    <text x="344" y="836" class="muted">This run is complete. Start a new run to continue.</text>
+    <rect x="879" y="818" width="91" height="26" rx="8" fill="#2563eb"/>
+    <text x="924" y="835" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">New run</text>
+
+    <!-- Right inspector tabs -->
+    <g transform="translate(1034 106)">
+      <text class="title">Run Inspector</text>
+      <text y="22" class="small">Durable event replay</text>
+
+      <rect y="52" width="340" height="36" rx="9" fill="#111827"/>
+      <rect x="2" y="54" width="78" height="32" rx="8" fill="#1d4ed8"/>
+      <text x="41" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Overview</text>
+      <text x="118" y="75" text-anchor="middle" class="small">Tasks</text>
+      <text x="195" y="75" text-anchor="middle" class="small">Agents</text>
+      <text x="282" y="75" text-anchor="middle" class="small">Events</text>
+
+      <text y="120" class="label">CURRENT STATE</text>
+      <rect y="136" width="340" height="78" rx="11" fill="#111827" stroke="#263247"/>
+      <circle cx="22" cy="160" r="7" fill="#34d399"/>
+      <text x="39" y="165" class="body">Completed</text>
+      <text x="316" y="165" text-anchor="end" class="small">100%</text>
+      <rect x="18" y="181" width="304" height="4" rx="2" fill="#064e3b"/>
+      <rect x="18" y="181" width="304" height="4" rx="2" fill="#10b981"/>
+      <text x="18" y="202" class="small">Persisted · sequence 24</text>
+
+      <text y="250" class="label">AGENTS</text>
+      <rect y="266" width="340" height="104" rx="11" fill="#111827"/>
+      <circle cx="22" cy="291" r="8" fill="#7c3aed"/>
+      <text x="40" y="295" class="body">Lead</text>
+      <text x="316" y="295" text-anchor="end" font-size="11" fill="#6ee7b7">completed</text>
+      <line x1="22" y1="302" x2="22" y2="338" stroke="#334155"/>
+      <circle cx="34" cy="335" r="7" fill="#2563eb"/>
+      <text x="51" y="339" class="body">backend-reviewer</text>
+      <text x="316" y="339" text-anchor="end" font-size="11" fill="#6ee7b7">completed</text>
+      <text x="51" y="357" class="small">review task · wt-login-fix</text>
+
+      <text y="406" class="label">TASKS</text>
+      <rect y="422" width="340" height="128" rx="11" fill="#111827"/>
+      <circle cx="22" cy="447" r="7" fill="#059669"/>
+      <path d="M18 447l3 3 5-7" fill="none" stroke="#fff" stroke-width="1.5"/>
+      <text x="40" y="451" class="body">Locate shared session state</text>
+      <circle cx="22" cy="486" r="7" fill="#059669"/>
+      <path d="M18 486l3 3 5-7" fill="none" stroke="#fff" stroke-width="1.5"/>
+      <text x="40" y="490" class="body">Implement isolated state</text>
+      <circle cx="22" cy="525" r="7" fill="#059669"/>
+      <path d="M18 525l3 3 5-7" fill="none" stroke="#fff" stroke-width="1.5"/>
+      <text x="40" y="529" class="body">Review and test worktree</text>
+
+      <text y="586" class="label">LATEST EVENTS</text>
+      <line x1="10" y1="610" x2="10" y2="720" stroke="#334155" stroke-width="2"/>
+      <circle cx="10" cy="618" r="6" fill="#34d399"/>
+      <text x="28" y="614" class="body">8 tests passed</text>
+      <text x="28" y="632" class="small">10:33:21 · test_worktree</text>
+      <circle cx="10" cy="670" r="6" fill="#34d399"/>
+      <text x="28" y="666" class="body">Review approved</text>
+      <text x="28" y="684" class="small">10:33:38 · backend-reviewer</text>
+      <circle cx="10" cy="722" r="6" fill="#34d399"/>
+      <text x="28" y="718" class="body">Run completed</text>
+      <text x="28" y="736" class="small">10:33:44 · sequence 24</text>
+
+      <rect y="754" width="340" height="42" rx="9" fill="#151229" stroke="#4c1d95"/>
+      <rect x="12" y="764" width="74" height="22" rx="11" fill="#312e81"/>
+      <text x="49" y="779" text-anchor="middle" font-size="10" fill="#c4b5fd">Mock MCP</text>
+      <text x="98" y="779" class="small">docs connected · 2 tools</text>
+    </g>
+  </g>
+</svg>

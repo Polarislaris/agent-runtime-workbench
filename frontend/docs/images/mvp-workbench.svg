@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Agent Runtime Workbench MVP 三栏界面</title>
+  <desc id="desc">左栏为运行记录，中栏为对话，右栏为实时运行轨迹。</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#020617" flood-opacity="0.35"/>
+    </filter>
+    <style>
+      .font { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .label { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; fill: #64748b; }
+      .muted { font-size: 13px; fill: #94a3b8; }
+      .body { font-size: 14px; fill: #dbeafe; }
+      .title { font-size: 16px; font-weight: 700; fill: #f8fafc; }
+      .small { font-size: 12px; fill: #94a3b8; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="900" fill="#070b16"/>
+  <circle cx="128" cy="105" r="190" fill="#172554" opacity="0.25"/>
+  <circle cx="1320" cy="790" r="260" fill="#312e81" opacity="0.16"/>
+
+  <g class="font" filter="url(#shadow)">
+    <rect x="54" y="42" width="1332" height="816" rx="18" fill="#0b1120" stroke="#263247"/>
+
+    <!-- Window chrome -->
+    <rect x="54" y="42" width="1332" height="54" rx="18" fill="#111827"/>
+    <path d="M54 78V60a18 18 0 0 1 18-18h1296a18 18 0 0 1 18 18v18z" fill="#111827"/>
+    <circle cx="82" cy="69" r="6" fill="#fb7185"/>
+    <circle cx="102" cy="69" r="6" fill="#fbbf24"/>
+    <circle cx="122" cy="69" r="6" fill="#34d399"/>
+    <text x="720" y="75" text-anchor="middle" class="muted">Agent Runtime Workbench · MVP</text>
+
+    <!-- Columns -->
+    <rect x="54" y="96" width="252" height="762" fill="#0d1424"/>
+    <rect x="306" y="96" width="690" height="762" fill="#0b1120"/>
+    <rect x="996" y="96" width="390" height="762" fill="#0d1424"/>
+    <line x1="306" y1="96" x2="306" y2="858" stroke="#263247"/>
+    <line x1="996" y1="96" x2="996" y2="858" stroke="#263247"/>
+
+    <!-- Left: runs -->
+    <g transform="translate(78 126)">
+      <rect width="36" height="36" rx="10" fill="#2563eb"/>
+      <path d="M11 18h14M18 11v14" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <text x="48" y="15" class="title">Agent Studio</text>
+      <text x="48" y="34" class="small">demo-app workspace</text>
+
+      <rect y="66" width="204" height="42" rx="10" fill="#2563eb"/>
+      <text x="102" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">＋ New run</text>
+
+      <text y="146" class="label">RECENT RUNS</text>
+      <rect y="164" width="204" height="66" rx="10" fill="#172554" stroke="#2563eb"/>
+      <circle cx="16" cy="187" r="4" fill="#60a5fa"/>
+      <text x="30" y="192" class="body">Fix failing login test</text>
+      <text x="30" y="214" class="small">Running · just now</text>
+
+      <rect y="238" width="204" height="66" rx="10" fill="#111827"/>
+      <circle cx="16" cy="261" r="4" fill="#34d399"/>
+      <text x="30" y="266" class="body">Review task workflow</text>
+      <text x="30" y="288" class="small">Completed · 8 min</text>
+
+      <rect y="312" width="204" height="66" rx="10" fill="#111827"/>
+      <circle cx="16" cy="335" r="4" fill="#f87171"/>
+      <text x="30" y="340" class="body">Run integration tests</text>
+      <text x="30" y="362" class="small">Failed · 23 min</text>
+
+      <rect y="662" width="204" height="54" rx="10" fill="#111827" stroke="#263247"/>
+      <circle cx="22" cy="689" r="10" fill="#1e293b"/>
+      <text x="42" y="686" class="body">Local runtime</text>
+      <text x="42" y="703" class="small">Connected</text>
+      <circle cx="188" cy="689" r="5" fill="#34d399"/>
+    </g>
+
+    <!-- Center header -->
+    <g transform="translate(338 122)">
+      <text class="title">Fix failing login test</text>
+      <text y="25" class="small">Run run_01J8K · demo-app</text>
+      <rect x="548" y="0" width="78" height="28" rx="14" fill="#172554"/>
+      <circle cx="564" cy="14" r="4" fill="#60a5fa"/>
+      <text x="576" y="18" font-size="12" fill="#bfdbfe">Running</text>
+    </g>
+    <line x1="306" y1="172" x2="996" y2="172" stroke="#263247"/>
+
+    <!-- Center conversation -->
+    <g transform="translate(338 204)">
+      <rect x="232" width="394" height="70" rx="14" fill="#1d4ed8"/>
+      <text x="254" y="27" font-size="13" font-weight="700" fill="#bfdbfe">YOU</text>
+      <text x="254" y="51" font-size="14" fill="#fff">分析失败的登录测试并修复问题。</text>
+
+      <circle cx="18" cy="118" r="18" fill="#7c3aed"/>
+      <text x="18" y="123" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">AI</text>
+      <text x="48" y="111" class="title">Agent</text>
+      <text x="48" y="136" class="body">我先查看失败测试和登录模块，然后定位差异。</text>
+
+      <rect x="48" y="164" width="578" height="88" rx="12" fill="#111827" stroke="#334155"/>
+      <circle cx="70" cy="188" r="7" fill="#34d399"/>
+      <text x="88" y="193" class="body">read_file</text>
+      <rect x="500" y="177" width="104" height="24" rx="12" fill="#052e2b"/>
+      <text x="552" y="193" text-anchor="middle" font-size="11" fill="#6ee7b7">Completed · 18ms</text>
+      <text x="70" y="225" class="small">agent/tests/test_login.py</text>
+      <text x="584" y="226" text-anchor="end" class="small">Show result  ›</text>
+
+      <rect x="48" y="266" width="578" height="88" rx="12" fill="#111827" stroke="#334155"/>
+      <circle cx="70" cy="290" r="7" fill="#60a5fa"/>
+      <text x="88" y="295" class="body">bash</text>
+      <rect x="516" y="279" width="88" height="24" rx="12" fill="#172554"/>
+      <text x="560" y="295" text-anchor="middle" font-size="11" fill="#93c5fd">Running</text>
+      <text x="70" y="327" class="small">pytest -q agent/tests/test_login.py</text>
+      <rect x="70" y="339" width="344" height="3" rx="2" fill="#1e3a8a"/>
+      <rect x="70" y="339" width="216" height="3" rx="2" fill="#3b82f6"/>
+
+      <rect x="48" y="378" width="578" height="122" rx="12" fill="#251b0b" stroke="#b45309"/>
+      <circle cx="72" cy="405" r="11" fill="#f59e0b"/>
+      <text x="72" y="410" text-anchor="middle" font-size="13" font-weight="700" fill="#422006">!</text>
+      <text x="94" y="410" font-size="14" font-weight="700" fill="#fde68a">Permission required</text>
+      <text x="70" y="440" class="small">Tool: edit_file · 修改登录验证逻辑</text>
+      <text x="70" y="461" class="small">Reason: Removing file content</text>
+      <rect x="378" y="462" width="104" height="28" rx="8" fill="#1f2937" stroke="#475569"/>
+      <text x="430" y="481" text-anchor="middle" font-size="12" fill="#cbd5e1">Reject</text>
+      <rect x="492" y="462" width="112" height="28" rx="8" fill="#d97706"/>
+      <text x="548" y="481" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Approve once</text>
+    </g>
+
+    <!-- Composer -->
+    <rect x="330" y="774" width="642" height="62" rx="14" fill="#111827" stroke="#334155"/>
+    <text x="352" y="810" class="muted">Ask the Agent to continue…</text>
+    <rect x="839" y="789" width="52" height="32" rx="9" fill="#1f2937"/>
+    <text x="865" y="810" text-anchor="middle" font-size="12" fill="#cbd5e1">Stop</text>
+    <rect x="899" y="789" width="52" height="32" rx="9" fill="#2563eb"/>
+    <text x="925" y="810" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Send</text>
+
+    <!-- Right inspector -->
+    <g transform="translate(1024 122)">
+      <text class="title">Run Inspector</text>
+      <text y="25" class="small">Live execution events</text>
+
+      <rect y="66" width="334" height="76" rx="12" fill="#111827" stroke="#263247"/>
+      <text x="18" y="92" class="small">STATUS</text>
+      <text x="18" y="121" font-size="18" font-weight="700" fill="#93c5fd">Running</text>
+      <text x="142" y="92" class="small">ELAPSED</text>
+      <text x="142" y="121" font-size="18" font-weight="700" fill="#f8fafc">00:27</text>
+      <text x="252" y="92" class="small">TOOLS</text>
+      <text x="252" y="121" font-size="18" font-weight="700" fill="#f8fafc">4</text>
+
+      <text y="180" class="label">TIMELINE</text>
+      <line x1="12" y1="208" x2="12" y2="588" stroke="#334155" stroke-width="2"/>
+
+      <circle cx="12" cy="216" r="7" fill="#34d399"/>
+      <text x="32" y="211" class="body">Run started</text>
+      <text x="32" y="231" class="small">10:31:02</text>
+
+      <circle cx="12" cy="278" r="7" fill="#34d399"/>
+      <text x="32" y="273" class="body">Model response</text>
+      <text x="32" y="293" class="small">10:31:04 · 1.8s</text>
+
+      <circle cx="12" cy="340" r="7" fill="#34d399"/>
+      <text x="32" y="335" class="body">read_file completed</text>
+      <text x="32" y="355" class="small">10:31:04 · 18ms</text>
+
+      <circle cx="12" cy="402" r="7" fill="#34d399"/>
+      <text x="32" y="397" class="body">TODO updated</text>
+      <text x="32" y="417" class="small">3 items · 1 in progress</text>
+
+      <circle cx="12" cy="464" r="8" fill="#60a5fa"/>
+      <circle cx="12" cy="464" r="13" fill="none" stroke="#3b82f6" opacity="0.35"/>
+      <text x="32" y="459" class="body">bash running</text>
+      <text x="32" y="479" class="small">pytest -q …</text>
+
+      <circle cx="12" cy="526" r="7" fill="#f59e0b"/>
+      <text x="32" y="521" class="body">Waiting for approval</text>
+      <text x="32" y="541" class="small">edit_file · 10:31:27</text>
+
+      <rect y="620" width="334" height="70" rx="12" fill="#111827"/>
+      <text x="16" y="646" class="small">MCP CONNECTION</text>
+      <rect x="16" y="657" width="82" height="22" rx="11" fill="#312e81"/>
+      <text x="57" y="672" text-anchor="middle" font-size="11" fill="#c4b5fd">Mock MCP</text>
+      <text x="112" y="672" class="small">docs · connected</text>
+    </g>
+  </g>
+</svg>
